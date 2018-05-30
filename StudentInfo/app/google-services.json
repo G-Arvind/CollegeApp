@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "614911666824",
+    "firebase_url": "https://studentinfoapp.firebaseio.com",
+    "project_id": "studentinfoapp",
+    "storage_bucket": "studentinfoapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:614911666824:android:0e7e0d1468230c81",
+        "android_client_info": {
+          "package_name": "com.example.arvind.studentinfo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "614911666824-hdol63gnnp3nrnncgg40darh77552g0s.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "614911666824-hdol63gnnp3nrnncgg40darh77552g0s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPk4gCXB7gMq55hw8-GjazG7So1HLqbtM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.arvind.studentinfo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".LoginPage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".AdminPanel" />
+        <activity android:name=".HodPanel" />
+        <activity android:name=".StaffPanel" />
+        <activity android:name=".StudentPanel" />
+        <activity android:name=".AddHod" />
+        <activity android:name=".EditHod" />
+        <activity android:name=".RemoveHod" />
+        <activity android:name=".AddStaff" />
+        <activity android:name=".RemoveStaff" />
+        <activity android:name=".EditStaff" />
+        <activity android:name=".AddStudent" />
+        <activity android:name=".RemoveStudent" />
+        <activity android:name=".EditStudent" />
+        <activity android:name=".RemoveIndStudent" />
+        <activity android:name=".EditIndStudent" />
+        <activity android:name=".ClassList" />
+        <activity android:name=".TakeAttendance"></activity>
+    </application>
+
+</manifest>
