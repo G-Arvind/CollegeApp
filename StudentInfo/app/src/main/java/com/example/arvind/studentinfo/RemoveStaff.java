@@ -78,7 +78,7 @@ public class RemoveStaff extends AppCompatActivity {
     }
     void setList()
     {
-       final ListAdapter listAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,names);
+       final ListAdapter listAdapter=new ArrayAdapter<String>(this,R.layout.list_item_1,names);
         slist.setAdapter(listAdapter);
 
         slist.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {

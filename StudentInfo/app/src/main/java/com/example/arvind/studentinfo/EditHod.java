@@ -77,7 +77,7 @@ public class EditHod extends AppCompatActivity {
     }
     void setList()
     {
-        ListAdapter listAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,names);
+        ListAdapter listAdapter=new ArrayAdapter<String>(this,R.layout.list_item_1,names);
         hodlist.setAdapter(listAdapter);
 
         hodlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {

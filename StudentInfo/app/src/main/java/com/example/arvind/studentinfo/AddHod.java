@@ -43,7 +43,7 @@ public class AddHod extends AppCompatActivity {
         mref= FirebaseDatabase.getInstance().getReference();
 
 
-        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, depts);
+        ArrayAdapter aa = new ArrayAdapter(this, R.layout.spinner_item, depts);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dept.setAdapter(aa);
 
@@ -53,7 +53,6 @@ public class AddHod extends AppCompatActivity {
                 catval=depts[i];
               //  Toast.makeText(getApplicationContext(),"succ"+catval,Toast.LENGTH_LONG).show();
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 

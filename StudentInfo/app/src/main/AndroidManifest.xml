@@ -34,7 +34,9 @@
         <activity android:name=".RemoveIndStudent" />
         <activity android:name=".EditIndStudent" />
         <activity android:name=".ClassList" />
-        <activity android:name=".TakeAttendance"></activity>
+        <activity android:name=".TakeAttendance" />
+        <activity android:name=".Addnews" />
+        <activity android:name=".ViewNews"></activity>
     </application>
 
 </manifest>

@@ -81,7 +81,7 @@ public class EditStaff extends AppCompatActivity {
     }
     void setList()
     {
-        ListAdapter listAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,names);
+        ListAdapter listAdapter=new ArrayAdapter<String>(this,R.layout.list_item_1,names);
         slist.setAdapter(listAdapter);
 
         slist.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -10,19 +10,21 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import at.markushi.ui.CircleButton;
+
 public class AdminPanel extends AppCompatActivity {
 
-    Button addhod,delhod,edithod,addnews,logout;
+    CircleButton addhod,delhod,edithod,addnews,logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_panel);
-        addhod=(Button)findViewById(R.id.addhod);
-        delhod=(Button)findViewById(R.id.delhod);
-        edithod=(Button)findViewById(R.id.edithod);
-        addnews=(Button)findViewById(R.id.addnews);
-        logout=(Button)findViewById(R.id.logout);
+        addhod=(CircleButton)findViewById(R.id.addhod);
+        delhod=(CircleButton)findViewById(R.id.delhod);
+        edithod=(CircleButton)findViewById(R.id.edithod);
+        addnews=(CircleButton)findViewById(R.id.addnews);
+        logout=(CircleButton)findViewById(R.id.logout);
 
         addhod.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,22 +47,23 @@ public class AdminPanel extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        addnews.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-              //  Intent intent=new Intent(AdminPanel.this,AddNews.class);
-               // startActivity(intent);
-            }
-        });
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"click",Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(),"click",Toast.LENGTH_LONG).show();
                 FirebaseAuth.getInstance().signOut();
                 Intent intent=new Intent(AdminPanel.this,LoginPage.class);
                 finish();
                 startActivity(intent);
 
+            }
+        });
+        addnews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(AdminPanel.this,Addnews.class);
+                finish();
+                startActivity(intent);
             }
         });
 

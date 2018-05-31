@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_staff_panel"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#37474F"
     android:orientation="vertical"
     tools:context="com.example.arvind.studentinfo.StaffPanel">
 
@@ -12,47 +14,190 @@
         android:id="@+id/wels"
         android:textSize="30dp"
         android:text="Welcome:"
+        android:textColor="#ffffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/addstud"
-        android:text="Add Student"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <at.markushi.ui.CircleButton
+            android:id="@+id/addstud"
+            android:layout_width="85dip"
+            android:layout_height="85dip"
+            android:src="@drawable/addp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            app:cb_color="#8BC34A"
+            app:cb_pressedRingWidth="8dip"
+            />
 
-    <Button
-        android:id="@+id/delstud"
-        android:text="Remove Student"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <at.markushi.ui.CircleButton
+            android:id="@+id/delstud"
+            android:layout_width="85dip"
+            android:layout_height="85dip"
+            android:src="@drawable/remove"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="100dp"
+            app:cb_color="#03A9F4"
+            app:cb_pressedRingWidth="8dip"
+            />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/editstud"
-        android:text="Edit Student"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/addstnews"
-        android:text="Add News"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/vstnews"
-        android:text="View News"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add student"
+            android:layout_marginLeft="30dp"
+            android:textSize="20dp"
+            android:textColor="#ffffff"/>
 
-    <Button
-        android:id="@+id/atten"
-        android:text="Take Attendance"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/exitstaff"
-        android:text="Exit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" del student"
+            android:layout_marginLeft="75dp"
+            android:textSize="20dp"
+            android:textColor="#ffffff"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/editstud"
+            android:layout_width="85dip"
+            android:layout_height="85dip"
+            android:src="@drawable/edit"
+            app:cb_color="#F44336"
+            app:cb_pressedRingWidth="8dip"
+            android:layout_marginLeft="40dp"
+            />
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/addstnews"
+            android:layout_width="85dip"
+            android:layout_height="85dip"
+            android:src="@drawable/addn"
+            android:layout_marginLeft="100dp"
+            app:cb_color="#E91E63"
+            app:cb_pressedRingWidth="8dip"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="edit student"
+            android:layout_marginLeft="30dp"
+            android:textSize="20dp"
+            android:textColor="#ffffff"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add news"
+            android:layout_marginLeft="90dp"
+            android:textSize="20dp"
+            android:textColor="#ffffff"/>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <at.markushi.ui.CircleButton
+            android:id="@+id/vstnews"
+            android:layout_width="85dip"
+            android:layout_height="85dip"
+            android:src="@drawable/vnews"
+            android:layout_marginLeft="40dp"
+            app:cb_color="#FFC107"
+            app:cb_pressedRingWidth="8dip"
+            />
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/atten"
+            android:layout_width="85dip"
+            android:layout_height="85dip"
+            android:src="@drawable/atten"
+            android:layout_marginLeft="100dp"
+            app:cb_color="#673AB7"
+            app:cb_pressedRingWidth="8dip"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="view news "
+            android:layout_marginLeft="40dp"
+            android:textSize="20dp"
+            android:textColor="#ffffff"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="attendance"
+            android:layout_marginLeft="80dp"
+            android:textSize="20dp"
+            android:textColor="#ffffff"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <at.markushi.ui.CircleButton
+            android:id="@+id/exitstaff"
+            android:layout_width="85dip"
+            android:layout_height="85dip"
+            android:src="@drawable/exit"
+            app:cb_color="#607D8B"
+            app:cb_pressedRingWidth="8dip"
+            android:layout_marginLeft="140dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="exit"
+            android:layout_marginLeft="165dp"
+            android:textSize="20dp"
+            android:textColor="#ffffff"/>
+
+    </LinearLayout>
 
 </LinearLayout>

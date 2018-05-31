@@ -1,6 +1,7 @@
 package com.example.arvind.studentinfo;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,9 +18,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Map;
 
+import at.markushi.ui.CircleButton;
+
 public class StudentPanel extends AppCompatActivity {
 
-    Button exitstud;
+    CircleButton exitstud,vstudnews;
     TextView welstud;
     DatabaseReference mref;
     Map<String, String> map;
@@ -30,7 +33,8 @@ public class StudentPanel extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_panel);
-        exitstud=(Button)findViewById(R.id.exitstud);
+        exitstud=(CircleButton)findViewById(R.id.exitstud);
+        vstudnews=(CircleButton)findViewById(R.id.vstudnews);
         welstud=(TextView)findViewById(R.id.welstud);
         mref= FirebaseDatabase.getInstance().getReference();
 
@@ -62,6 +66,17 @@ public class StudentPanel extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+        vstudnews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(StudentPanel.this,ViewNews.class);
+                intent.putExtra("dpval",dep);
+                intent.putExtra("original",val);
+                intent.putExtra("type","student");
+                startActivity(intent);
             }
         });
 

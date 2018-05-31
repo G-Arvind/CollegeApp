@@ -4,38 +4,73 @@
     android:id="@+id/activity_add_staff"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#37474F"
     android:orientation="vertical"
     tools:context="com.example.arvind.studentinfo.AddStaff">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textColor="#ffffff"
+        android:text="Name:"/>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#ffffff"
         android:inputType="textPersonName"
-        android:hint="Name"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:id="@+id/sname" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff"
+        android:text="Id:"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="Id"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:id="@+id/sid" />
 
-    <EditText
-        android:hint="password"
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="15dp"
+        android:textColor="#ffffff"
+        android:text="Password:"/>
+
+    <EditText
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/spwd" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="15dp"
+        android:textColor="#ffffff"
+        android:text="Email:"/>
+
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="Email"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:id="@+id/semail" />
 
@@ -44,7 +79,12 @@
         android:layout_marginTop="30dp"
         android:id="@+id/addssubmit"
         android:text="ADD STAFF"
-        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginLeft="145dp"
+        android:textColor="@color/button_bg"
+        android:backgroundTint="#26A69A"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
 </LinearLayout>
+

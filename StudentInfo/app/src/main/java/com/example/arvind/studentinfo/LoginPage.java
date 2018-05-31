@@ -60,7 +60,7 @@ public class LoginPage extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         spinner=(Spinner)findViewById(R.id.spinner);
         storstdep=(Spinner)findViewById(R.id.storstdep);
-        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, category);
+        ArrayAdapter aa = new ArrayAdapter(this, R.layout.spinner_item, category);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(aa);
         mref= FirebaseDatabase.getInstance().getReference();
@@ -78,8 +78,8 @@ public class LoginPage extends AppCompatActivity {
         });
 
 
-        ArrayAdapter aa1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, depts);
-        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter aa1 = new ArrayAdapter(this, R.layout.spinner_item, depts);
+        aa1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         storstdep.setAdapter(aa1);
 
         storstdep.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

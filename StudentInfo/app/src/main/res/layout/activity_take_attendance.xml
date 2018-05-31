@@ -3,11 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_take_attendance"
     android:layout_width="match_parent"
+    android:background="#37474F"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.arvind.studentinfo.TakeAttendance">
 
     <EditText
+        android:textColor="#ffffff"
+        android:textColorHint="#B0BEC5"
         android:hint="Type Subject Code"
         android:id="@+id/subcode"
         android:layout_width="match_parent"

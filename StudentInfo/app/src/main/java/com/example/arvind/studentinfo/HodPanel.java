@@ -20,9 +20,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Map;
 
+import at.markushi.ui.CircleButton;
+
 public class HodPanel extends AppCompatActivity {
 
-    Button addstaff, delstaff, editstaff, addhnews, vhnews, exithod;
+    CircleButton addstaff, delstaff, editstaff, addhnews, vhnews, exithod;
     DatabaseReference mref;
     Map<String, String> map;
     TextView wel;
@@ -33,12 +35,12 @@ public class HodPanel extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hod_panel);
-        addstaff = (Button) findViewById(R.id.addstaff);
-        delstaff = (Button) findViewById(R.id.delstaff);
-        editstaff = (Button) findViewById(R.id.editstaff);
-        addhnews = (Button) findViewById(R.id.addhnews);
-        vhnews = (Button) findViewById(R.id.vhnews);
-        exithod = (Button) findViewById(R.id.exithod);
+        addstaff = (CircleButton) findViewById(R.id.addstaff);
+        delstaff = (CircleButton) findViewById(R.id.delstaff);
+        editstaff = (CircleButton) findViewById(R.id.editstaff);
+        addhnews = (CircleButton) findViewById(R.id.addhnews);
+        vhnews = (CircleButton) findViewById(R.id.vhnews);
+        exithod = (CircleButton) findViewById(R.id.exithod);
         wel = (TextView) findViewById(R.id.wel);
         mref= FirebaseDatabase.getInstance().getReference();
 
@@ -100,17 +102,19 @@ public class HodPanel extends AppCompatActivity {
         addhnews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // Intent intent=new Intent(HodPanel.this,AddNews.class);
-              //  intent.putExtra("dpval",department);
-               // startActivity(intent);
+                Intent intent=new Intent(HodPanel.this,Addnews.class);
+                finish();
+                startActivity(intent);
             }
         });
         vhnews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              //  Intent intent=new Intent(HodPanel.this,AddNews.class);
-             //   intent.putExtra("dpval",department);
-              //  startActivity(intent);
+                Intent intent=new Intent(HodPanel.this,ViewNews.class);
+                intent.putExtra("dpval",department);
+                intent.putExtra("original",val);
+                intent.putExtra("type","hod");
+                startActivity(intent);
             }
         });
         exithod.setOnClickListener(new View.OnClickListener() {

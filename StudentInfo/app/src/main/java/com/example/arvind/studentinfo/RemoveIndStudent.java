@@ -83,7 +83,7 @@ public class RemoveIndStudent extends AppCompatActivity {
     }
     void setList()
     {
-        final ListAdapter listAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,names);
+        final ListAdapter listAdapter=new ArrayAdapter<String>(this,R.layout.list_item_1,names);
         studlist.setAdapter(listAdapter);
         studlist.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override

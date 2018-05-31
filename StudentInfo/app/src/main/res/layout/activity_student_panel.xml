@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_student_panel"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#37474F"
     tools:context="com.example.arvind.studentinfo.StudentPanel">
 
     <TextView
@@ -12,23 +14,46 @@
         android:id="@+id/welstud"
         android:textSize="30dp"
         android:text="Welcome:"
+        android:textColor="#ffffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/vstnews"
-        android:text="View News"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/vatten"
-        android:text="View Attendance"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
+    <at.markushi.ui.CircleButton
+        android:id="@+id/vstudnews"
+        android:layout_width="150dip"
+        android:layout_height="150dip"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/event"
+        android:layout_marginLeft="115dp"
+        app:cb_color="#FFC107"
+        app:cb_pressedRingWidth="8dip"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="view news "
+        android:layout_marginLeft="120dp"
+        android:textSize="30dp"
+        android:textColor="#ffffff"/>
+
+    <at.markushi.ui.CircleButton
         android:id="@+id/exitstud"
-        android:text="Exit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="150dip"
+        android:layout_height="150dip"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/exit1"
+        android:layout_marginLeft="115dp"
+        app:cb_color="#607D8B"
+        app:cb_pressedRingWidth="8dip"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exit "
+        android:layout_marginLeft="165dp"
+        android:textSize="30dp"
+        android:textColor="#ffffff"/>
 
 </LinearLayout>

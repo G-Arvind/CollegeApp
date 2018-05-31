@@ -18,9 +18,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Map;
 
+import at.markushi.ui.CircleButton;
+
 public class StaffPanel extends AppCompatActivity {
 
-    Button addstud,delstud,editstud,addstnews,vstnews,exitstaff,atten;
+    CircleButton addstud,delstud,editstud,addstnews,vstnews,exitstaff,atten;
     DatabaseReference mref;
     Map<String, String> map;
     TextView wels;
@@ -30,13 +32,13 @@ public class StaffPanel extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_staff_panel);
-        addstud=(Button)findViewById(R.id.addstud);
-        delstud=(Button)findViewById(R.id.delstud);
-        editstud=(Button)findViewById(R.id.editstud);
-        addstnews=(Button)findViewById(R.id.addstnews);
-        vstnews=(Button)findViewById(R.id.vstnews);
-        exitstaff=(Button)findViewById(R.id.exitstaff);
-        atten=(Button)findViewById(R.id.atten);
+        addstud=(CircleButton)findViewById(R.id.addstud);
+        delstud=(CircleButton)findViewById(R.id.delstud);
+        editstud=(CircleButton)findViewById(R.id.editstud);
+        addstnews=(CircleButton)findViewById(R.id.addstnews);
+        vstnews=(CircleButton)findViewById(R.id.vstnews);
+        exitstaff=(CircleButton)findViewById(R.id.exitstaff);
+        atten=(CircleButton)findViewById(R.id.atten);
         wels = (TextView) findViewById(R.id.wels);
         mref= FirebaseDatabase.getInstance().getReference();
 
@@ -112,15 +114,19 @@ public class StaffPanel extends AppCompatActivity {
         addstnews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-          //      Intent intent=new Intent(StaffPanel.this,AddNews.class);
-          //      startActivity(intent);
+                Intent intent=new Intent(StaffPanel.this,Addnews.class);
+                finish();
+                startActivity(intent);
             }
         });
         vstnews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-          //      Intent intent=new Intent(StaffPanel.this,AddNews.class);
-           //     startActivity(intent);
+                Intent intent=new Intent(StaffPanel.this,ViewNews.class);
+                intent.putExtra("dpval",department);
+                intent.putExtra("original",val);
+                intent.putExtra("type","staff");
+                startActivity(intent);
             }
         });
         exitstaff.setOnClickListener(new View.OnClickListener() {

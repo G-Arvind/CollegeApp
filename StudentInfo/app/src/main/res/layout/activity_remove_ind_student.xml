@@ -5,12 +5,25 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
+    android:background="#37474F"
     tools:context="com.example.arvind.studentinfo.RemoveIndStudent">
 
+    <TextView
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List of Students"/>
     <ListView
         android:id="@+id/indstudremovelist"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="470dp">
     </ListView>
+    <TextView
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tap and Hold to delete"/>
 
 </LinearLayout>

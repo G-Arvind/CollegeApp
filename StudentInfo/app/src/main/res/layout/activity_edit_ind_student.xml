@@ -5,7 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#37474F"
     tools:context="com.example.arvind.studentinfo.EditIndStudent">
+
+    <TextView
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List of Students"/>
 
     <ListView
         android:id="@+id/indstudlist"
