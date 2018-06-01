@@ -1,5 +1,6 @@
 package com.example.arvind.studentinfo;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ public class AddStaff extends AppCompatActivity {
     EditText sname,sid,spwd,semail;
     Button addssubmit;
     String catval,val,dpval,oid;
+    ProgressDialog progressDialog;
     int flag=0,exec=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class AddStaff extends AppCompatActivity {
         semail=(EditText)findViewById(R.id.semail);
         addssubmit=(Button)findViewById(R.id.addssubmit);
         mref= FirebaseDatabase.getInstance().getReference();
+        progressDialog = new ProgressDialog(this);
 
         if(getIntent().getExtras()!=null) {
             val = getIntent().getExtras().getString("link");
@@ -68,6 +71,10 @@ public class AddStaff extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                progressDialog.setTitle("please wait");
+                progressDialog.setMessage("Adding...");
+                progressDialog.show();
+
                 String name=sname.getText().toString().trim();
                 String email=semail.getText().toString().trim();
                 String id=sid.getText().toString().trim();
@@ -88,6 +95,7 @@ public class AddStaff extends AppCompatActivity {
                 }
                 Intent intent =new Intent(AddStaff.this,HodPanel.class);
                 Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
                 Log.v("TAGG", "val" + oid);
                 intent.putExtra("link",oid);
                 startActivity(intent);

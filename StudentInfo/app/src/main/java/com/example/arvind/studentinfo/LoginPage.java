@@ -52,6 +52,7 @@ public class LoginPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
+        progressDialog=new ProgressDialog(this);
 
         email = (EditText) findViewById(R.id.email);
         pass = (EditText) findViewById(R.id.pass);
@@ -99,6 +100,9 @@ public class LoginPage extends AppCompatActivity {
     login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressDialog.setTitle("please wait");
+                progressDialog.setMessage("LoggingIn");
+                progressDialog.show();
                 loginfun();
             }
         });
@@ -127,10 +131,12 @@ public class LoginPage extends AppCompatActivity {
             eval = email.getText().toString().trim();
             passval = pass.getText().toString().trim();
             if (!Patterns.EMAIL_ADDRESS.matcher(eval).matches()) {
+                progressDialog.dismiss();
                 email.setError("invalid email id");
                 return;
             }
             if (passval.length() < 6) {
+                progressDialog.dismiss();
                 pass.setError("Password should contain atleast 6 character");
                 return;
             }
@@ -141,9 +147,11 @@ public class LoginPage extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         finish();
                         Intent intent = new Intent(LoginPage.this, AdminPanel.class);
+                        progressDialog.dismiss();
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                     } else {
+                        progressDialog.dismiss();
                         Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
@@ -176,6 +184,7 @@ public class LoginPage extends AppCompatActivity {
                         // Toast.makeText(getApplicationContext(),passval+eval,Toast.LENGTH_LONG).show();
                         // hemail.setText(map.get("hemail"));
                         if (ta.equals(passval) && ia.equals(eval)) {
+                            progressDialog.dismiss();
                             finish();
                             Intent intent = new Intent(LoginPage.this, HodPanel.class);
                             intent.putExtra("link",eval);
@@ -183,6 +192,7 @@ public class LoginPage extends AppCompatActivity {
                             startActivity(intent);
                         }
                         else {
+                            progressDialog.dismiss();
                             Toast.makeText(getApplicationContext(),"Login Failed",Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -223,6 +233,7 @@ public class LoginPage extends AppCompatActivity {
                         // Toast.makeText(getApplicationContext(),passval+eval,Toast.LENGTH_LONG).show();
                         // hemail.setText(map.get("hemail"));
                         if (ta.equals(passval) && ia.equals(eval)) {
+                            progressDialog.dismiss();
                             finish();
                             Intent intent = new Intent(LoginPage.this, StaffPanel.class);
                             intent.putExtra("link",eval);
@@ -230,6 +241,7 @@ public class LoginPage extends AppCompatActivity {
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                         } else {
+                            progressDialog.dismiss();
                             Toast.makeText(getApplicationContext(), "Login Failed", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -266,12 +278,14 @@ public class LoginPage extends AppCompatActivity {
                                 Log.v("TAG", "LINK:" +tmref+"/"+lin+"/"+d.child(eval).child("stuid").getValue().toString());
                               String orglink=  tmref+"/"+lin+"/"+d.child(eval).child("stuid").getValue().toString();
                                 Intent intent = new Intent(LoginPage.this, StudentPanel.class);
+                                progressDialog.dismiss();
                                 intent.putExtra("depval",depval);
                                 intent.putExtra("classid",lin);
                                 intent.putExtra("link",eval);
                                 startActivity(intent);
                             }
                             else {
+                                progressDialog.dismiss();
                                 Toast.makeText(getApplicationContext(),"Invalid Login",Toast.LENGTH_SHORT).show();
                             }
                         }

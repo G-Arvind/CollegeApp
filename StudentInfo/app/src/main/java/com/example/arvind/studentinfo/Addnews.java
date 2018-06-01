@@ -1,6 +1,8 @@
 package com.example.arvind.studentinfo;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +23,7 @@ public class Addnews extends AppCompatActivity {
     String Department = "";
     String role = "";
     String title,descr;
+    ProgressDialog progressDialog;
     int i = 0;
 
     @Override
@@ -40,6 +43,8 @@ public class Addnews extends AppCompatActivity {
         ECE = (CheckBox)findViewById(R.id.checkBoxECE);
         IT = (CheckBox)findViewById(R.id.checkBoxIT);
         MECH = (CheckBox)findViewById(R.id.checkBoxMECH);
+        progressDialog = new ProgressDialog(this);
+
 
         submit = (Button)findViewById(R.id.button);
 
@@ -49,6 +54,9 @@ public class Addnews extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog.setTitle("please wait");
+                progressDialog.setMessage("Adding...");
+                progressDialog.show();
 
                 title = Title.getText().toString();
 
@@ -102,6 +110,7 @@ public class Addnews extends AppCompatActivity {
                 Log.d("TAG","Role :"+ role + "\n" + "Department : " + Department + "\n");
 
                 Toast.makeText(getApplicationContext(),"Published",Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
                 Intent intent =new Intent(Addnews.this,AdminPanel.class);
                 startActivity(intent);
 

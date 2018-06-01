@@ -5,24 +5,41 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#37474F"
     tools:context="com.example.arvind.studentinfo.Addnews">
 
+    <TextView
+        android:text="Title:"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/postname"
-        android:hint="Title"
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="50dp" />
 
+
+    <TextView
+        android:text="Description:"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/postdesc"
         android:layout_width="match_parent"
+        android:textColor="#ffffff"
         android:layout_height="100dp"
         android:ems="10"
-        android:hint="Description"
         android:inputType="textMultiLine" />
     <TextView
-        android:text="To"
-        android:textSize="25dp"
+        android:text="To:"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -32,18 +49,27 @@
         android:orientation="horizontal"
         >
         <CheckBox
+            android:buttonTint="#ffffff"
             android:id="@+id/checkBoxHod"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:textColor="#ffffff"
             android:text="HOD" />
         <CheckBox
+            android:buttonTint="#ffffff"
             android:id="@+id/checkBoxStaff"
+            android:layout_marginLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#ffffff"
             android:text="Staff" />
         <CheckBox
+            android:buttonTint="#ffffff"
             android:id="@+id/checkBoxStudent"
             android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textColor="#ffffff"
             android:layout_height="wrap_content"
             android:text="Student" />
 
@@ -51,49 +77,87 @@
     </LinearLayout>
 
     <TextView
-        android:text="Departments"
-        android:textSize="25dp"
+        android:text="Departments:"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-
-    <CheckBox
-        android:id="@+id/checkBoxECE"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ECE" />
+        android:orientation="horizontal"
+        android:layout_marginLeft="100dp">
 
-    <CheckBox
-        android:id="@+id/checkBoxCSE"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="CSE" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <CheckBox
+                android:buttonTint="#ffffff"
+                android:id="@+id/checkBoxECE"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:textColor="#ffffff"
+                android:layout_height="wrap_content"
+                android:text="ECE" />
 
-    <CheckBox
-        android:id="@+id/checkBoxIT"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="IT" />
+            <CheckBox
+                android:buttonTint="#ffffff"
+                android:id="@+id/checkBoxCSE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:layout_marginTop="5dp"
+                android:text="CSE" />
 
-    <CheckBox
-        android:id="@+id/checkBoxEEE"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="EEE" />
+            <CheckBox
+                android:buttonTint="#ffffff"
+                android:id="@+id/checkBoxIT"
+                android:layout_marginTop="5dp"
+                android:textColor="#ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="IT" />
 
-    <CheckBox
-        android:id="@+id/checkBoxMECH"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MECH" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="40dp">
+
+            <CheckBox
+                android:buttonTint="#ffffff"
+                android:id="@+id/checkBoxEEE"
+                android:layout_width="match_parent"
+                android:textColor="#ffffff"
+                android:layout_height="wrap_content"
+                android:text="EEE" />
+
+            <CheckBox
+                android:buttonTint="#ffffff"
+                android:id="@+id/checkBoxMECH"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:layout_marginTop="5dp"
+                android:text="MECH" />
+        </LinearLayout>
+    </LinearLayout>
 
     <Button
         android:id="@+id/button"
-        android:layout_gravity="bottom"
-        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/button_bg"
+        android:backgroundTint="#26A69A"
+        android:layout_width="wrap_content"
         android:text="Submit" />
+
 
 
 </LinearLayout>

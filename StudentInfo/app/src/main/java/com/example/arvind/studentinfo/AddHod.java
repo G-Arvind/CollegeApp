@@ -1,5 +1,6 @@
 package com.example.arvind.studentinfo;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ public class AddHod extends AppCompatActivity {
     Spinner dept;
     Button addhodsubmit;
     String catval,val,origid;
+    ProgressDialog progressDialog;
     int flag=0;
     String[] depts={"SELECT","CSE","IT","EEE","ECE","MECH"};
     @Override
@@ -41,6 +43,7 @@ public class AddHod extends AppCompatActivity {
         dept=(Spinner)findViewById(R.id.addhoddept);
         addhodsubmit=(Button)findViewById(R.id.addhodsubmit);
         mref= FirebaseDatabase.getInstance().getReference();
+        progressDialog=new ProgressDialog(this);
 
 
         ArrayAdapter aa = new ArrayAdapter(this, R.layout.spinner_item, depts);
@@ -76,6 +79,10 @@ public class AddHod extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                progressDialog.setTitle("please wait");
+                progressDialog.setMessage("Adding...");
+                progressDialog.show();
+
 
                 String depart=catval;
                 String name=hname.getText().toString().trim();
@@ -98,6 +105,7 @@ public class AddHod extends AppCompatActivity {
                     tmref.removeValue();
                 }
                 Intent intent =new Intent(AddHod.this,AdminPanel.class);
+                progressDialog.dismiss();
                 Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT).show();
                 startActivity(intent);
                 finish();

@@ -3,58 +3,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login_page"
     android:layout_width="match_parent"
+    android:background="#37474F"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context="com.example.arvind.studentinfo.LoginPage">
 
-    <EditText
-        android:hint="email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:layout_marginTop="55dp"
-        android:id="@+id/email"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/school"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:id="@+id/imageView" />
 
     <EditText
-        android:hint="password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:layout_below="@+id/email"
+        android:id="@+id/email"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:drawableLeft="@drawable/username3"
+        android:layout_gravity="center"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="43dp"
-        android:id="@+id/pass" />
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="email"
+        android:inputType="textEmailAddress"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:layout_weight="0.00" />
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/email"
+        android:drawableLeft="@drawable/pass"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="password"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff" />
 
 
     <Spinner
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="280dp"
+        android:layout_gravity="center"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/spinner"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        >
     </Spinner>
 
     <Spinner
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
         android:id="@+id/storstdep"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        >
     </Spinner>
 
     <Button
-        android:hint="login"
-        android:layout_width="match_parent"
+        android:text="log in"
+        android:layout_gravity="center"
+        android:textColor="@color/button_bg"
+        android:backgroundTint="#26A69A"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="70dp"
         android:id="@+id/login"
+        android:background="@drawable/button_bg"
         android:layout_below="@+id/pass"
         android:layout_centerHorizontal="true" />
+
 
 </LinearLayout>
