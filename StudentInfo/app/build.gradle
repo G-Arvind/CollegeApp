@@ -40,6 +40,7 @@ dependencies {
     compile 'com.google.firebase:firebase-database:11.8.0'
     compile 'com.google.firebase:firebase-storage:11.8.0'
     compile 'com.github.markushi:circlebutton:1.1'
+    compile 'com.github.ViksaaSkool:AwesomeSplash:v1.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta5'
 
     testCompile 'junit:junit:4.12'

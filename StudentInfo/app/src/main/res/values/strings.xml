@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">StudentInfo</string>
+    <string name="app_name">CollegeApp</string>
+    <string name="splashtitle">CollegeApp</string>
 </resources>
